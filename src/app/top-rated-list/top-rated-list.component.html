@@ -1,0 +1,18 @@
+<section class="top-rated">
+  <div class="download" *ngIf="!films; else filmsWrap">
+
+  </div>
+  <ng-template #filmsWrap>
+    <div id="{{film.id}}" *ngFor="let film of films" class="top-rated__film-card">
+      <img class="film-card__image" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{film.poster_path}}" alt="img">
+      <h3 class="film-card__title">
+        {{film.original_title}}
+      </h3>
+      <p class="film-card__date">
+        {{setShortDate(film.release_date) | date: 'mediumDate'}}
+      </p>
+    </div>
+  </ng-template>
+
+
+</section>

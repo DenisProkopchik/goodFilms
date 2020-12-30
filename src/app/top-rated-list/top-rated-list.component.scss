@@ -1,0 +1,54 @@
+.top-rated{
+  position: relative;
+  width: 1340px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 130px 0px 30px 200px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 250px 250px 250px 250px;
+  grid-row-gap: 3vw;
+  justify-content: space-between;
+  background-color: transparent;
+  .top-rated__film-card{
+    border-radius: 10px;
+    background-color: #fafafa;
+    overflow: hidden;
+    transition: all 0.2s;
+  .film-card__image{
+    width: 250px;
+    height: 375px;
+    }
+    .film-card__title,
+    .film-card__date{
+      padding-left: 10px;
+    }
+  }
+  .top-rated__film-card:hover{
+    -webkit-box-shadow: 0px 0px 4px 4px rgba(255,255,255,0.5); 
+    box-shadow: 0px 0px 4px 4px rgba(255,255,255,0.5);
+    cursor: pointer;
+  }
+
+  .download{
+    position: absolute;
+    top: 45%;
+    right: 40%;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+    border: 3px solid #000;
+    border-bottom:  3px solid transparent;
+    border-radius: 50%;
+    animation: loading 1s linear 0s infinite normal forwards;
+  }
+  
+}
+@keyframes loading{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
