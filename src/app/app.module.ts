@@ -6,12 +6,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { TopRatedListComponent } from './top-rated-list/top-rated-list.component';
+import { PopularComponent } from './popular/popular.component';
+import { NowPlayingComponent } from './movies/now-playing/now-playing.component';
+import { UpcommingComponent } from './movies/upcomming/upcomming.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    TopRatedListComponent
+    TopRatedListComponent,
+    PopularComponent,
+    NowPlayingComponent,
+    UpcommingComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

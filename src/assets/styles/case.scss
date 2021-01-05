@@ -1,36 +1,77 @@
-$titleColor:#545454;
-$textColorDark:#4C4C4C;
-$italicTextColor:#B2B2B2;
-$buttonColor:#292929;
-$startBGC:#211F20;
-$startRadialColor:#5B483A;
-$mainColor:#CDCDCD;
-$primeryColorDark:#F1CDB3;
-$primeryColorLight:#FDDCC4;
-$whiteBackgroundI:#F6F6F6;
-$whiteBackgroundS:#FAFAFA;
-$contentWidth: 170px;
-$Georgia: Georgia, 'Times New Roman', Times, serif;
+$mainBackground: linear-gradient(90deg, #0e257c 15%,  rgba(12,22,25,1) 100%);
 
-%title{
-  color: $titleColor;
-  font-family: $Georgia;
-  font-weight: 400;
-  letter-spacing: 0.06em;
+@mixin setPage() {
+  position: relative;
+  width: 1340px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 130px 0px 30px 200px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 250px 250px 250px 250px;
+  grid-row-gap: 3vw;
+  justify-content: space-between;
+  background-color: transparent;
 }
-%text{
-	font-weight: 400;
-	color: $textColorDark;
-	line-height: 160%;
+@mixin setFilmCard() {
+  position: relative;
+  border-radius: 10px;
+  background-color: #fafafa;
+  overflow: hidden;
+  transition: all 0.2s;
 }
-%button{
-  padding: 5 10px;
-  outline: none;
-  border: 2px solid $mainColor;
-  border-radius: 5px;
-  background-color: #fff;
+@mixin setImage() {
+  width: 250px;
+  height: 375px;
+  }
+@mixin setTitle(){
+  padding-left: 10px;
 }
-%buttonHover{
+@mixin setVote(){
+  position: absolute;
+  top: 352px;
+  right: 20px;
+  padding: 12px 10px;
+  min-width: 41.5px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background-color: rgb(66, 66, 55);
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+}
+@mixin setColorGreen(){
+  background-color: #66cc33;
+}
+@mixin setColorYellow(){
+  background-color: #ffcc33;
+}
+@mixin setColorRed(){
+  background-color: #ff0000;
+}
+@mixin setHover(){
+  -webkit-box-shadow: 0px 0px 4px 4px rgba(255,255,255,0.5); 
+  box-shadow: 0px 0px 4px 4px rgba(255,255,255,0.5);
   cursor: pointer;
-  background-color: $mainColor;
+}
+
+@mixin setDownload(){
+  position: absolute;
+  top: 45%;
+  right: 40%;
+  width: 100px;
+  height: 100px;
+  box-sizing: border-box;
+  border: 3px solid #fff;
+  border-bottom:  3px solid transparent;
+  border-radius: 50%;
+  animation: loading 1s linear 0s infinite normal forwards;
+}
+@keyframes loading{
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
 }

@@ -1,3 +1,6 @@
+@import '../assets/styles/case.scss';
+
 .main{
-  background: linear-gradient(90deg, #0e257c 15%,  rgba(12,22,25,1) 100%);
+  background: $mainBackground;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

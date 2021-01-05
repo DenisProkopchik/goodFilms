@@ -1,3 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import './assets/styles/normalize.scss';
 @import './assets/styles/case.scss';
+body::-webkit-scrollbar{
+  width: 0px;
+}

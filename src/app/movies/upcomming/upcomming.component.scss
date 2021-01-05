@@ -1,8 +1,8 @@
-@import '../../assets/styles/case.scss';
+@import '../../../assets/styles/case.scss';
 
-.top-rated{
+.upcoming{
   @include setPage();
-  .top-rated__film-card{
+  .upcoming__film-card{
     @include setFilmCard();
   .film-card__image{
     @include setImage();
@@ -24,7 +24,7 @@
       @include setColorRed();
     }
   }
-  .top-rated__film-card:hover{
+  .upcoming__film-card:hover{
     @include setHover();
   }
   .download{

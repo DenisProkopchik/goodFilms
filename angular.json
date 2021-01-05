@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "goodFilms"
+    }
+  },
+  "defaultProject": "goodFilms",
+  "cli": {
+    "analytics": false
+  }
 }

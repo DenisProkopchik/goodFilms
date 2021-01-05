@@ -1,18 +1,18 @@
 <header class="header__wrapper">
   <section class="header">
-    <img class="header__logo" src="../../assets/images/logo/logo.png" alt="logo">
+    <img class="header__logo" src="../../assets/images/logo/logo.png" alt="logo" [routerLink]="['/']">
     <nav class="header__nav">
       <h3 class="nav__title">Movies</h3>
-      <a class="nav__links" href="">
-        Popular
-      </a>
-      <a class="nav__links" href="">
-        Now Playing
-      </a>
-      <a class="nav__links" href="">
+      <a class="nav__links" [routerLink]="['/top-rated']" routerLinkActive="router-link-active">
         Top Rated
       </a>
-      <a class="nav__links" href="">
+      <a class="nav__links" [routerLink]="['/popular']" routerLinkActive="router-link-active">
+        Popular
+      </a>
+      <a class="nav__links" [routerLink]="['/now-playing']" routerLinkActive="router-link-active">
+        Now Playing
+      </a>
+      <a class="nav__links" [routerLink]="['/upcoming']" routerLinkActive="router-link-active">
         Upcoming
       </a>
     </nav>
