@@ -1,33 +1,45 @@
 @import '../../../assets/styles/case.scss';
 
 .upcoming{
-  @include setPage();
+  @extend %page;
   .upcoming__film-card{
-    @include setFilmCard();
+    @extend %filmCard;
   .film-card__image{
-    @include setImage();
+    @extend %image;
     }
     .film-card__title,
     .film-card__date{
-      @include setTitle();
+      @extend %title;
     }
     .film-card__vote{
-      @include setVote();
+      @extend %vote;
     }
     .film-card__vote_background-color_green{
-      @include setColorGreen();
+      @extend %colorGreen;
     }
     .film-card__vote_background-color_yellow{
-      @include setColorYellow();
+      @extend %colorYellow;
     }
     .film-card__vote_background-color_red{
-      @include setColorRed();
+      @extend %colorRed;
+    }
+  }
+  .upcoming__slider{
+    @extend %sliderBlock;
+    .slider__arrows{
+      @extend %sliderArrows;
+    }
+    .slider__value{
+      @extend %sliderPage;
+    }
+    .slider__arrows:hover:not(:disabled){
+      @extend %sliderArrowsHover;
     }
   }
   .upcoming__film-card:hover{
-    @include setHover();
+    @extend %hover;
   }
   .download{
-    @include setDownload();
+    @extend %download;
   }
 }

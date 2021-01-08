@@ -2,19 +2,26 @@
   <section class="header">
     <img class="header__logo" src="../../assets/images/logo/logo.png" alt="logo" [routerLink]="['/']">
     <nav class="header__nav">
-      <h3 class="nav__title">Movies</h3>
-      <a class="nav__links" [routerLink]="['/top-rated']" routerLinkActive="router-link-active">
-        Top Rated
-      </a>
-      <a class="nav__links" [routerLink]="['/popular']" routerLinkActive="router-link-active">
-        Popular
-      </a>
-      <a class="nav__links" [routerLink]="['/now-playing']" routerLinkActive="router-link-active">
-        Now Playing
-      </a>
-      <a class="nav__links" [routerLink]="['/upcoming']" routerLinkActive="router-link-active">
-        Upcoming
-      </a>
+      <input type="checkbox" id="navCheckbox">
+      <h3 class="nav__title">
+        <label for="navCheckbox" class="title__label">
+          Movies <span class="label__arrow">&#9660;</span>
+        </label>
+      </h3>
+      <ul class="nav-wrapper__links">
+        <li class="nav__links" [routerLink]="['/top-rated']" routerLinkActive="router-link-active">
+          Top Rated
+        </li>
+        <li class="nav__links" [routerLink]="['/popular']" routerLinkActive="router-link-active">
+          Popular
+        </li>
+        <li class="nav__links" [routerLink]="['/now-playing']" routerLinkActive="router-link-active">
+          Now Playing
+        </li>
+        <li class="nav__links" [routerLink]="['/upcoming']" routerLinkActive="router-link-active">
+          Upcoming
+        </li>
+      </ul>
     </nav>
   </section>
 </header>

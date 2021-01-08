@@ -2,11 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-now-playing',
-  templateUrl: './now-playing.component.html',
-  styleUrls: ['./now-playing.component.scss']
+  selector: 'app-popular',
+  templateUrl: './popular.component.html',
+  styleUrls: ['./popular.component.scss']
 })
-export class NowPlayingComponent implements OnInit {
+export class PopularComponent implements OnInit {
   public todos;
   public films: [];
   public page: number = 1;
@@ -50,7 +50,7 @@ export class NowPlayingComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.http.get(`https://api.themoviedb.org/3/movie/now_playing?api_key=1d7f4d3e6182d453261ccff9ce9a14bc&language=en-US&page=${this.page}`).subscribe(todos => {
+    this.http.get(`https://api.themoviedb.org/3/movie/popular?api_key=1d7f4d3e6182d453261ccff9ce9a14bc&language=en-US&page=${this.page}`).subscribe(todos => {
       console.log(todos);
       this.todos = todos;
       this.films = this.todos.results;

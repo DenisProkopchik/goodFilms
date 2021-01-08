@@ -1,11 +1,11 @@
 $mainBackground: linear-gradient(90deg, #0e257c 15%,  rgba(12,22,25,1) 100%);
 
-@mixin setPage() {
+%page {
   position: relative;
   width: 1340px;
   min-height: 100vh;
   margin: auto;
-  padding: 130px 0px 30px 200px;
+  padding: 130px 0px 110px 200px;
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 250px 250px 250px 250px;
@@ -13,21 +13,21 @@ $mainBackground: linear-gradient(90deg, #0e257c 15%,  rgba(12,22,25,1) 100%);
   justify-content: space-between;
   background-color: transparent;
 }
-@mixin setFilmCard() {
+%filmCard {
   position: relative;
   border-radius: 10px;
   background-color: #fafafa;
   overflow: hidden;
   transition: all 0.2s;
 }
-@mixin setImage() {
+%image {
   width: 250px;
   height: 375px;
   }
-@mixin setTitle(){
+%title{
   padding-left: 10px;
 }
-@mixin setVote(){
+%vote{
   position: absolute;
   top: 352px;
   right: 20px;
@@ -40,24 +40,58 @@ $mainBackground: linear-gradient(90deg, #0e257c 15%,  rgba(12,22,25,1) 100%);
   font-weight: 700;
   text-align: center;
 }
-@mixin setColorGreen(){
+%colorGreen{
   background-color: #66cc33;
 }
-@mixin setColorYellow(){
+%colorYellow{
   background-color: #ffcc33;
 }
-@mixin setColorRed(){
+%colorRed{
   background-color: #ff0000;
 }
-@mixin setHover(){
+%hover{
   -webkit-box-shadow: 0px 0px 4px 4px rgba(255,255,255,0.5); 
   box-shadow: 0px 0px 4px 4px rgba(255,255,255,0.5);
   cursor: pointer;
 }
 
-@mixin setDownload(){
+%sliderBlock{
   position: absolute;
-  top: 45%;
+  right: 0;
+  bottom: 0;
+  margin-bottom: 60px;
+  width: 1140px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+%sliderArrows{
+  margin: 0 10px;
+  border-radius: 10px;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  text-align: center;
+  transition: all 0.2s;
+  outline: none;
+}
+%sliderPage{
+  margin: 0 10px;
+  color: #fff;
+  text-align: center;
+}
+%sliderArrowsHover{
+  color: #000;
+  background-color: #fff;
+  cursor: pointer;
+}
+.slider-arrows:disabled{
+  opacity: 0;
+}
+%download{
+  position: absolute;
+  top: 40%;
   right: 40%;
   width: 100px;
   height: 100px;

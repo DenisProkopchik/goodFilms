@@ -1,12 +1,12 @@
 @import '../../../assets/styles/case.scss';
 
-.now-playing{
+.top-rated{
   @extend %page;
-  .now-playing__film-card{
+  .top-rated__film-card{
     @extend %filmCard;
-  .film-card__image{
-    @extend %image;
-    }
+    .film-card__image{
+      @extend %image;
+      }
     .film-card__title,
     .film-card__date{
       @extend %title;
@@ -24,7 +24,10 @@
       @extend %colorRed;
     }
   }
-  .now-playing__slider{
+  .top-rated__film-card:hover{
+    @extend %hover;
+  }
+  .top-rated__slider{
     @extend %sliderBlock;
     .slider__arrows{
       @extend %sliderArrows;
@@ -35,9 +38,6 @@
     .slider__arrows:hover:not(:disabled){
       @extend %sliderArrowsHover;
     }
-  }
-  .now-playing__film-card:hover{
-    @extend %hover;
   }
   .download{
     @extend %download;

@@ -1,6 +1,5 @@
 <section class="top-rated">
   <div class="download" *ngIf="!films; else filmsWrap">
-
   </div>
   <ng-template #filmsWrap>
     <div id="{{film.id}}" *ngFor="let film of films" class="top-rated__film-card">
@@ -19,7 +18,26 @@
         {{film.vote_average}}
       </div>
     </div>
-  </ng-template>
 
+  </ng-template>
+  <div class="top-rated__slider" (click)='changePage($event)'>
+    <button id='firstPage' class="slider__arrows" [disabled]="page === 1">
+      &#9668;
+      &#9668;
+    </button>
+    <button id='minusPage' class="slider__arrows" [disabled]="page === 1">
+      &#9668;
+    </button>
+    <span class="slider__value">
+      {{page}}
+    </span>
+    <button id='plusPage' class="slider__arrows" [disabled]="this.films ? page === this.todos.total_pages : null">
+      &#9658;
+    </button>
+    <button id='lastPage' class="slider__arrows" [disabled]="this.films ? page === this.todos.total_pages : null">
+      &#9658;
+      &#9658;
+    </button>
+  </div>
 
 </section>

@@ -1,8 +1,8 @@
 @import '../../../assets/styles/case.scss';
 
-.now-playing{
+.popular{
   @extend %page;
-  .now-playing__film-card{
+  .popular__film-card{
     @extend %filmCard;
   .film-card__image{
     @extend %image;
@@ -24,7 +24,7 @@
       @extend %colorRed;
     }
   }
-  .now-playing__slider{
+  .popular__slider{
     @extend %sliderBlock;
     .slider__arrows{
       @extend %sliderArrows;
@@ -36,7 +36,7 @@
       @extend %sliderArrowsHover;
     }
   }
-  .now-playing__film-card:hover{
+  .popular__film-card:hover{
     @extend %hover;
   }
   .download{

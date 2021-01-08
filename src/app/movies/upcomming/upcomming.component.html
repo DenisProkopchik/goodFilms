@@ -20,4 +20,23 @@
       </div>
     </div>
   </ng-template>
+  <div class="upcoming__slider" (click)='changePage($event)'>
+    <button id='firstPage' class="slider__arrows" [disabled]="page === 1">
+      &#9668;
+      &#9668;
+    </button>
+    <button id='minusPage' class="slider__arrows" [disabled]="page === 1">
+      &#9668;
+    </button>
+    <span class="slider__value">
+      {{page}}
+    </span>
+    <button id='plusPage' class="slider__arrows" [disabled]="this.films ? page === this.todos.total_pages : null">
+      &#9658;
+    </button>
+    <button id='lastPage' class="slider__arrows" [disabled]="this.films ? page === this.todos.total_pages : null">
+      &#9658;
+      &#9658;
+    </button>
+  </div>
 </section>

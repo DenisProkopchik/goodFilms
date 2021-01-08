@@ -25,12 +25,44 @@
       left: 0px;
       width: 12%;
       height: 100vh;
-      display: flex;
-      flex-flow: column;
       background:transparent;
-      .nav__title{
+      .nav-wrapper__links{
+        height: 0px;
+        padding-left: 10px;
+        list-style-type: none;
+        transition: height 0.2s;
+        overflow: hidden;
+      }
+      #navCheckbox{
+        display: none;
+      }
+      #navCheckbox:checked ~ .nav-wrapper__links{
+        height: 200px;
+      }
+      #navCheckbox:checked ~ .nav__title{
         color: #fff;
+      }
+      
+      .nav__title{
+        color: #aaa;
         margin: 15px 0;
+        .title__label{
+          transition: all 0.2s;
+          user-select: none;
+          .label__arrow{
+            position: absolute;
+            margin-left: 5px;
+            transition: all 0.2s;
+          }
+        }
+        .title__label:hover{
+          color: #fff;
+          cursor: pointer;
+        }
+      }
+      #navCheckbox:checked ~ .nav__title >.title__label > .label__arrow{
+        
+        transform: rotate(180deg);
       }
       .nav__links{
         color: #aaa;
@@ -42,10 +74,12 @@
         background-repeat: no-repeat;
         background-position: left bottom;
         transition: all .2s ease-out;
+        outline: none;
       }
       .nav__links:hover{
         color: #fff;
         background-size: 55% 3px, auto;
+        cursor: pointer;
       }
       .router-link-active{
         color: #fff;
