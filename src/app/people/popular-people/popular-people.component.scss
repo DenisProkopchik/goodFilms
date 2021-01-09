@@ -1,0 +1,45 @@
+@import '../../../assets/styles/case.scss';
+
+.person{
+  @extend %page;
+  .person__card{
+    @extend %filmCard;
+  .card__image{
+    @extend %image;
+    }
+    .card__title{
+      @extend %title;
+      text-align: center
+    }
+    .card__vote{
+      @extend %vote;
+    }
+    .card__vote_background-color_green{
+      @extend %colorGreen;
+    }
+    .card__vote_background-color_yellow{
+      @extend %colorYellow;
+    }
+    .card__vote_background-color_red{
+      @extend %colorRed;
+    }
+  }
+  .person__slider{
+    @extend %sliderBlock;
+    .slider__arrows{
+      @extend %sliderArrows;
+    }
+    .slider__value{
+      @extend %sliderPage;
+    }
+    .slider__arrows:hover:not(:disabled){
+      @extend %sliderArrowsHover;
+    }
+  }
+  .person__card:hover{
+    @extend %hover;
+  }
+  .download{
+    @extend %download;
+  }
+}

@@ -1,28 +1,28 @@
-<section class="now-playing">
+<section class="person">
   <div class="download" *ngIf="!results; else resultsWrap">
 
   </div>
   <ng-template #resultsWrap>
-    <div id="{{film.id}}" *ngFor="let film of results" class="now-playing__film-card">
-      <img class="film-card__image"
-        [src]="film.poster_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + film.poster_path : '../../../assets/images/queston.jpg'"
+    <div id="{{person.id}}" *ngFor="let person of results" class="person__card">
+      <img class="card__image"
+        [src]="person.profile_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + person.profile_path : '../../../assets/images/queston.jpg'"
         alt="img">
-      <h3 class="film-card__title">
-        {{film.original_title}}
+      <h3 class="card__title">
+        {{person.name}}
       </h3>
-      <p class="film-card__date">
-        {{SetShortDateService.setShortDate(film.release_date) | date: 'mediumDate'}}
-      </p>
-      <div class="film-card__vote" [ngClass]="{
-        'film-card__vote_background-color_red': film.vote_average < 4,
-        'film-card__vote_background-color_yellow': film.vote_average < 7,
-        'film-card__vote_background-color_green': film.vote_average >= 7
+      <!-- <p class="person-card__date">
+        {{SetShortDateService.setShortDate(person.release_date) | date: 'mediumDate'}}
+      </p> -->
+      <!-- <div class="person-card__vote" [ngClass]="{
+        'person-card__vote_background-color_red': person.vote_average < 4,
+        'person-card__vote_background-color_yellow': person.vote_average < 7,
+        'person-card__vote_background-color_green': person.vote_average >= 7
       }">
-        {{film.vote_average}}
-      </div>
+        {{person.vote_average}}
+      </div> -->
     </div>
   </ng-template>
-  <div class="now-playing__slider" (click)='changePage($event)' *ngIf="data">
+  <div class="person__slider" (click)='changePage($event)' *ngIf="data">
     <button id='firstPage' class="slider__arrows" [disabled]="page === 1"
       [ngStyle]="{visibility: page === 1 ? 'hidden' : 'visible'}">
       &#9668;

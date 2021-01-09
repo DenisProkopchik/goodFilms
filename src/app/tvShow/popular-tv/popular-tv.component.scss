@@ -1,0 +1,45 @@
+@import '../../../assets/styles/case.scss';
+
+.popular{
+  @extend %page;
+  .popular__film-card{
+    @extend %filmCard;
+  .film-card__image{
+    @extend %image;
+    }
+    .film-card__title,
+    .film-card__date{
+      @extend %title;
+    }
+    .film-card__vote{
+      @extend %vote;
+    }
+    .film-card__vote_background-color_green{
+      @extend %colorGreen;
+    }
+    .film-card__vote_background-color_yellow{
+      @extend %colorYellow;
+    }
+    .film-card__vote_background-color_red{
+      @extend %colorRed;
+    }
+  }
+  .popular__slider{
+    @extend %sliderBlock;
+    .slider__arrows{
+      @extend %sliderArrows;
+    }
+    .slider__value{
+      @extend %sliderPage;
+    }
+    .slider__arrows:hover:not(:disabled){
+      @extend %sliderArrowsHover;
+    }
+  }
+  .popular__film-card:hover{
+    @extend %hover;
+  }
+  .download{
+    @extend %download;
+  }
+}

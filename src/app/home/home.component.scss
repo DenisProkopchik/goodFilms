@@ -4,6 +4,7 @@
   @extend %page;
   display: block;
   .home__welcome{
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -15,19 +16,36 @@
       text-align: center;
     }
     .welcome__search{
-      width: 300px;
+      width: 500px;
+      z-index: 2;
       padding: 5px 10px;
+      border:none;
+      border-radius: 32px;
       outline: none;
     }
     .welcome__search-button{
-      margin-left: 10px;
+      position: absolute;
+      top: 63px;
+      right: 309px;
+      z-index: 3;
       padding: 5px 10px;
+      border:none;
+      border-radius: 32px;
+      color: #fff;
+      background-color: rgb(0, 2, 124);
+      outline: none;
+      transition: all 0.2s;
+    }
+    .welcome__search-button:hover{
+      color:  rgb(0, 2, 124);
+      background-color: #fff;
+      cursor: pointer;
     }
   }
-  .search-result{
+  .searchResult{
     @extend %page;
     width: 100%;
-    padding: 20px 0 40px;
+    padding: 40px 0 30px;
     .search-result__result-card{
       @extend %filmCard;
       max-height: 500px;
@@ -51,25 +69,30 @@
         @extend %colorRed;
       }
     }
-    .search-result__slider{
-      @extend %sliderBlock;
-      margin-bottom: 0;
-      .slider__arrows{
-        @extend %sliderArrows;
-      }
-      .slider__value{
-        @extend %sliderPage;
-      }
-      .slider__arrows:hover:not(:disabled){
-        @extend %sliderArrowsHover;
-      }
-    }
     .search-result__result-card:hover{
       @extend %hover;
     }
-    .download{
-      width: 100%;
-      height: 100vh;
+    // .download{
+    //   width: 100%;
+    //   height: 30vh;
+    // }
+  }
+  .home__slider{
+    @extend %sliderBlock;
+    .slider__arrows{
+      @extend %sliderArrows;
     }
+    .slider__value{
+      @extend %sliderPage;
+    }
+    .slider__arrows:hover:not(:disabled){
+      @extend %sliderArrowsHover;
+    }
+  }
+  .home__no-results{
+    margin: 40px 0;
+    color: #fff;
+    font-size: 26px;
+    text-align: center;
   }
 }

@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { SetShortDateService } from '../../servises/set-short-date.service';
 import { GetDataService } from '../../servises/get-data.service';
 import { CountPageService } from '../../servises/count-page.service';
 
 @Component({
-  selector: 'app-top-rated-list',
-  templateUrl: './top-rated-list.component.html',
-  styleUrls: ['./top-rated-list.component.scss']
+  selector: 'app-popular-people',
+  templateUrl: './popular-people.component.html',
+  styleUrls: ['./popular-people.component.scss']
 })
-export class TopRatedListComponent implements OnInit {
+export class PopularPeopleComponent implements OnInit {
   public data;
-  public nameOfComponent = { kind: 'top_rated', type: 'movie' };
+  public nameOfComponent = { kind: 'popular', type: 'person' };
   public results: [];
   public page: number = 1;
 

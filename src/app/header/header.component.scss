@@ -26,20 +26,24 @@
       width: 12%;
       height: 100vh;
       background:transparent;
-      .nav-wrapper__links{
+      .nav-wrapper__links,
+      .nav-wrapper__links2{
         height: 0px;
         padding-left: 10px;
         list-style-type: none;
         transition: height 0.2s;
         overflow: hidden;
       }
-      #navCheckbox{
+      #navMovieCheckbox,
+      #navShowsCheckbox{
         display: none;
       }
-      #navCheckbox:checked ~ .nav-wrapper__links{
-        height: 200px;
+      #navMovieCheckbox:checked ~ .nav-wrapper__links,
+      #navShowsCheckbox:checked ~ .nav-wrapper__links2{
+        height: 120px;
       }
-      #navCheckbox:checked ~ .nav__title{
+      #navMovieCheckbox:checked + .nav__title,
+      #navShowsCheckbox:checked + .nav__title{
         color: #fff;
       }
       
@@ -60,11 +64,12 @@
           cursor: pointer;
         }
       }
-      #navCheckbox:checked ~ .nav__title >.title__label > .label__arrow{
-        
+      #navMovieCheckbox:checked + .nav__title >.title__label > .label__arrow,
+      #navShowsCheckbox:checked + .nav__title >.title__label > .label__arrow{
         transform: rotate(180deg);
       }
-      .nav__links{
+      .nav__links,
+      .nav__title-people{
         color: #aaa;
         text-decoration: none;
         margin-bottom: 6px;
@@ -76,15 +81,27 @@
         transition: all .2s ease-out;
         outline: none;
       }
-      .nav__links:hover{
+      .nav__title-people{
+        margin: 15px 0;
+      }
+      .nav__links:hover,
+      .nav__title-people:hover{
         color: #fff;
         background-size: 55% 3px, auto;
         cursor: pointer;
       }
-      .router-link-active{
+      .nav__title-people:hover{
+        background-size: 75% 3px, auto;
+      }
+      
+      .router-link-active,
+      .active-title{
         color: #fff;
         background-image: linear-gradient(rgb(0, 153, 255), rgb(0, 153, 255));
         background-size: 55% 3px, auto;
+      }
+      .active-title{
+        background-size: 75% 3px, auto;
       }
     }
   }

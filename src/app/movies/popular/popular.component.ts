@@ -1,5 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { SetShortDateService } from '../../servises/set-short-date.service';
+import { GetDataService } from '../../servises/get-data.service';
+import { CountPageService } from '../../servises/count-page.service';
 
 @Component({
   selector: 'app-popular',
@@ -7,54 +10,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./popular.component.scss']
 })
 export class PopularComponent implements OnInit {
-  public todos;
-  public films: [];
+  public data;
+  public nameOfComponent = { kind: 'popular', type: 'movie' };
+  public results: [];
   public page: number = 1;
 
-  constructor(private http: HttpClient) { }
+  constructor(
+    public SetShortDateService: SetShortDateService,
+    public GetDataService: GetDataService,
+    private CountPageService: CountPageService
+  ) { }
 
-  setShortDate(str) {
-    if (str) return new Date(str.split('-'));
-  }
 
   changePage(event) {
-    let targetId = event.target.id;
-    this.films = undefined;
-    switch (targetId) {
-      case 'firstPage':
-        this.onFirstPage();
-        break;
-      case 'plusPage':
-        this.increasePage();
-        break;
-      case 'minusPage':
-        this.dicreasePage();
-        break;
-      case 'lastPage':
-        this.onLastPage();
-        break;
-    }
+    this.page = this.CountPageService.changePage(event.target.id, this.page, this.data);
+    this.results = undefined;
     this.ngOnInit();
-  }
-  onFirstPage() {
-    this.page = 1;
-  }
-  increasePage() {
-    ++this.page;
-  }
-  dicreasePage() {
-    --this.page;
-  }
-  onLastPage() {
-    this.page = this.todos.total_pages;
   }
 
   ngOnInit(): void {
-    this.http.get(`https://api.themoviedb.org/3/movie/popular?api_key=1d7f4d3e6182d453261ccff9ce9a14bc&language=en-US&page=${this.page}`).subscribe(todos => {
-      console.log(todos);
-      this.todos = todos;
-      this.films = this.todos.results;
+    this.GetDataService.getData(this.nameOfComponent, this.page).subscribe(data => {
+      console.log(data);
+      this.data = data;
+      this.results = this.data.results;
     });
   }
-
 }

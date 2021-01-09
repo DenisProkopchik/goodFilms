@@ -1,14 +1,16 @@
 <section class="top-rated">
-  <div class="download" *ngIf="!films; else filmsWrap">
+  <div class="download" *ngIf="!results; else resultsWrap">
   </div>
-  <ng-template #filmsWrap>
-    <div id="{{film.id}}" *ngFor="let film of films" class="top-rated__film-card">
-      <img class="film-card__image" src="https://image.tmdb.org/t/p/w600_and_h900_bestv2{{film.poster_path}}" alt="img">
+  <ng-template #resultsWrap>
+    <div id="{{film.id}}" *ngFor="let film of results" class="top-rated__film-card">
+      <img class="film-card__image"
+        [src]="film.poster_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + film.poster_path : '../../../assets/images/queston.jpg'"
+        alt="img">
       <h3 class="film-card__title">
         {{film.original_title}}
       </h3>
       <p class="film-card__date">
-        {{setShortDate(film.release_date) | date: 'mediumDate'}}
+        {{SetShortDateService.setShortDate(film.release_date) | date: 'mediumDate'}}
       </p>
       <div class="film-card__vote" [ngClass]="{
         'film-card__vote_background-color_red': film.vote_average < 4,
@@ -20,21 +22,25 @@
     </div>
 
   </ng-template>
-  <div class="top-rated__slider" (click)='changePage($event)'>
-    <button id='firstPage' class="slider__arrows" [disabled]="page === 1">
+  <div class="top-rated__slider" (click)='changePage($event)' *ngIf="data">
+    <button id='firstPage' class="slider__arrows" [disabled]="page === 1"
+      [ngStyle]="{visibility: page === 1 ? 'hidden' : 'visible'}">
       &#9668;
       &#9668;
     </button>
-    <button id='minusPage' class="slider__arrows" [disabled]="page === 1">
+    <button id='minusPage' class="slider__arrows" [disabled]="page === 1"
+      [ngStyle]="{visibility: page === 1 ? 'hidden' : 'visible'}">
       &#9668;
     </button>
-    <span class="slider__value">
+    <span class="slider__value" [ngStyle]="{visibility: this.data.total_pages <= 1 ? 'hidden' : 'visible'}">
       {{page}}
     </span>
-    <button id='plusPage' class="slider__arrows" [disabled]="this.films ? page === this.todos.total_pages : null">
+    <button id='plusPage' class="slider__arrows" [disabled]="page === this.data.total_pages"
+      [ngStyle]="{visibility: page === this.data.total_pages ? 'hidden' : 'visible'}">
       &#9658;
     </button>
-    <button id='lastPage' class="slider__arrows" [disabled]="this.films ? page === this.todos.total_pages : null">
+    <button id='lastPage' class="slider__arrows" [disabled]="page === this.data.total_pages"
+      [ngStyle]="{visibility: page === this.data.total_pages ? 'hidden' : 'visible'}">
       &#9658;
       &#9658;
     </button>
