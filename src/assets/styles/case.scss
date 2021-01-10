@@ -103,50 +103,7 @@ $mainBackground: linear-gradient(90deg, #0e257c 15%,  rgba(12,22,25,1) 100%);
   border-radius: 50%;
   animation: loading 1s linear 0s infinite normal forwards;
 }
-%page1339px {
-  width: 85%;
-    padding: 130px 0px 110px 200px;
-    grid-gap: 1.5vw;
-}
-%filmCard1339px {
-  max-height: 450px;
-}
-%title1339px{
-  font-size: 16px;
-}
-%date1339px{
-  font-size: 14px;
-}
-%vote1339px{
-  top: 5px;
-    right: 5px;
-    padding: 6px 4px;
-    min-width: 28px;
-    font-size: 14px;
-}
-%page1023px{
-  grid-template-columns: 1.2fr 1.2fr 1.2fr ;
-}
-%page767px{
-  width: 95%;
-  padding: 120px 0 120px;
-}
-%title767px{
-  font-size: 14px;
-}
-%date767px{
-  font-size: 12px;
-}
-%vote767px{
-  min-width: 25px;
-  font-size: 12px;
-}
-%slider767px{
-  padding-left: 0;
-}
-%page450px{
-  grid-template-columns: 1.5fr 1.5fr ;
-}
+
 @keyframes loading{
   0%{
     transform: rotate(0deg);

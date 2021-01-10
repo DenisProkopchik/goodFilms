@@ -3,14 +3,16 @@
     <h1 class="welcome__title">
       Welcome to "Good films"
     </h1>
-    <input class="welcome__search" (keyup.enter)="getNewData(searchInput.value)" #searchInput maxlength="40"
-      placeholder="Search for a movie, tv show, person......">
-    <button class="welcome__search-button" (click)="getNewData(searchInput.value)">
-      Search
-    </button>
+    <div class="welcome__search-wrap">
+      <input class="welcome__search" (keyup.enter)="getNewData(searchInput.value)" #searchInput maxlength="40"
+        placeholder="Search for a movie, tv show, person......">
+      <button class="welcome__search-button" (click)="getNewData(searchInput.value)">
+        Search
+      </button>
+    </div>
   </div>
 
-  <div class='searchResult' *ngIf="results && results.length">
+  <div class='search-result' *ngIf="results && results.length">
     <div id="{{result.id}}" *ngFor="let result of results" class="search-result__result-card">
       <img class="result-card__image"
         [src]="result.poster_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + result.poster_path : result.profile_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + result.profile_path : '../../../assets/images/question.jpg'"
