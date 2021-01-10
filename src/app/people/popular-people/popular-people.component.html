@@ -5,7 +5,7 @@
   <ng-template #resultsWrap>
     <div id="{{person.id}}" *ngFor="let person of results" class="person__card">
       <img class="card__image"
-        [src]="person.profile_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + person.profile_path : '../../../assets/images/queston.jpg'"
+        [src]="person.profile_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + person.profile_path : '../../../assets/images/question.jpg'"
         alt="img">
       <h3 class="card__title">
         {{person.name}}

@@ -43,3 +43,58 @@
     @extend %download;
   }
 }
+@media (max-width: 1399.98px){
+  .now-playing{
+    width: 85%;
+    padding: 130px 0px 110px 200px;
+    grid-gap: 1.5vw;
+    .now-playing__film-card{
+      max-height: 450px;
+      .film-card__title{
+        font-size: 16px;
+      }
+      .film-card__date{
+        font-size: 14px;
+      }
+      .film-card__vote{
+        top: 5px;
+        right: 5px;
+        padding: 6px 4px;
+        min-width: 28px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+@media (max-width: 1023.98px){
+  .now-playing{
+    grid-template-columns: 1.2fr 1.2fr 1.2fr ;
+  }
+}
+@media (max-width: 767.98px){
+  .now-playing{
+    width: 95%;
+    padding: 120px 0 120px;
+    .now-playing__film-card{
+      .film-card__title{
+        font-size: 14px;
+      }
+      .film-card__date{
+        font-size: 12px;
+      }
+      .film-card__vote{
+        min-width: 25px;
+        font-size: 12px;
+      }
+      
+    }
+    .now-playing__slider{
+      padding-left: 0;
+    }
+  }
+}
+@media (max-width: 449.98px){
+  .now-playing{
+    grid-template-columns: 1.5fr 1.5fr ;
+  }
+}

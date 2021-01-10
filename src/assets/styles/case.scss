@@ -8,28 +8,29 @@ $mainBackground: linear-gradient(90deg, #0e257c 15%,  rgba(12,22,25,1) 100%);
   padding: 130px 0px 110px 200px;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 250px 250px 250px 250px;
-  grid-row-gap: 3vw;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 3vw;
   justify-content: space-between;
   background-color: transparent;
 }
 %filmCard {
   position: relative;
   border-radius: 10px;
+  max-height: 550px;
   background-color: #fafafa;
   overflow: hidden;
   transition: all 0.2s;
 }
 %image {
-  width: 250px;
-  height: 375px;
+  width: 100%;
+  height: auto;
   }
 %title{
   padding-left: 10px;
 }
 %vote{
   position: absolute;
-  top: 352px;
+  top: 75%;
   right: 20px;
   padding: 12px 10px;
   min-width: 41.5px;
@@ -60,7 +61,8 @@ $mainBackground: linear-gradient(90deg, #0e257c 15%,  rgba(12,22,25,1) 100%);
   right: 0;
   bottom: 0;
   margin-bottom: 60px;
-  width: 1140px;
+  padding-left: 200px;
+  width: 100%;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -100,6 +102,50 @@ $mainBackground: linear-gradient(90deg, #0e257c 15%,  rgba(12,22,25,1) 100%);
   border-bottom:  3px solid transparent;
   border-radius: 50%;
   animation: loading 1s linear 0s infinite normal forwards;
+}
+%page1339px {
+  width: 85%;
+    padding: 130px 0px 110px 200px;
+    grid-gap: 1.5vw;
+}
+%filmCard1339px {
+  max-height: 450px;
+}
+%title1339px{
+  font-size: 16px;
+}
+%date1339px{
+  font-size: 14px;
+}
+%vote1339px{
+  top: 5px;
+    right: 5px;
+    padding: 6px 4px;
+    min-width: 28px;
+    font-size: 14px;
+}
+%page1023px{
+  grid-template-columns: 1.2fr 1.2fr 1.2fr ;
+}
+%page767px{
+  width: 95%;
+  padding: 120px 0 120px;
+}
+%title767px{
+  font-size: 14px;
+}
+%date767px{
+  font-size: 12px;
+}
+%vote767px{
+  min-width: 25px;
+  font-size: 12px;
+}
+%slider767px{
+  padding-left: 0;
+}
+%page450px{
+  grid-template-columns: 1.5fr 1.5fr ;
 }
 @keyframes loading{
   0%{

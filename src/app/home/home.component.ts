@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { SetShortDateService } from '../servises/set-short-date.service';
 import { CountPageService } from '../servises/count-page.service';
 
@@ -18,8 +17,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private http: HttpClient,
     public SetShortDateService: SetShortDateService,
-    private CountPageService: CountPageService,
-    private ActivatedRoute: ActivatedRoute
+    private CountPageService: CountPageService
   ) { }
 
   changePage(event) {
@@ -27,6 +25,12 @@ export class HomeComponent implements OnInit {
     this.results = undefined;
     this.getData(this.inputValue);
   }
+
+  getNewData(value) {
+    this.page = 1;
+    this.getData(value);
+  }
+
   getData(value) {
     if (!value.trim()) return;
     this.inputValue = value;

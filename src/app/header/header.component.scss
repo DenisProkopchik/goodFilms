@@ -16,7 +16,7 @@
       height: 100px;
       outline: none;
     }
-    .header__logo{
+    .header__logo:hover{
       cursor: pointer;
     }
     .header__nav{
@@ -25,6 +25,7 @@
       left: 0px;
       width: 12%;
       height: 100vh;
+      box-sizing: border-box;
       background:transparent;
       .nav-wrapper__links,
       .nav-wrapper__links2{
@@ -105,5 +106,113 @@
       }
     }
   }
-
+}
+@media (max-width: 1399.98px){
+  .header__wrapper{
+    .header{
+      width: 85%;
+      .header__nav{
+        width: 20%;
+      }
+    }
+  }
+}
+@media (max-width: 767.98px){
+  .header__wrapper{
+    background: #0e257c;
+    .header{
+      width: 95%;
+      .header__nav{
+        top: 0;
+        left: auto;
+        right: 0;
+        width: 80%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .nav-wrapper__links,
+        .nav-wrapper__links2{
+          position: absolute;
+          top: 80%;
+          left: -10px;
+          padding: 0 10px;
+          background: #0e257c;
+          font-size: 12px;
+        }
+        .nav-wrapper__links2{
+          left: 30vw;
+        }
+        .nav__title{
+          font-size: 14px;
+        }
+        .nav__links:hover,
+        .nav__title-people:hover{
+          background-size: 100% 3px, auto;
+          
+        }
+        .nav__title-people{
+          font-size: 14px;
+        }
+        .nav__title-people:hover{
+          background-size: 100% 3px, auto;
+        }
+        
+        .router-link-active,
+        .active-title{
+          background-size: 100% 3px, auto;
+        }
+        .active-title{
+          background-size: 100% 3px, auto;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 449.98px){
+  .header__wrapper{
+    .header{
+      .header__nav{
+        // top: 0;
+        // left: auto;
+        // right: 0;
+        // width: 80%;
+        // height: 100%;
+        // display: flex;
+        // align-items: center;
+        // justify-content: space-between;
+        // .nav-wrapper__links,
+        // .nav-wrapper__links2{
+        //   position: absolute;
+        //   top: 80%;
+        //   left: -10px;
+        //   padding: 0 10px;
+        //   background: #0e257c;
+        //   font-size: 12px;
+        // }
+        .nav-wrapper__links2{
+          left: 24vw;
+        }
+        // .nav__title{
+        //   font-size: 14px;
+        // }
+        // .nav__links:hover,
+        // .nav__title-people:hover{
+        //   background-size: 100% 3px, auto;
+          
+        // }
+        // .nav__title-people:hover{
+        //   background-size: 100% 3px, auto;
+        // }
+        
+        // .router-link-active,
+        // .active-title{
+        //   background-size: 100% 3px, auto;
+        // }
+        // .active-title{
+        //   background-size: 100% 3px, auto;
+        // }
+      }
+    }
+  }
 }
