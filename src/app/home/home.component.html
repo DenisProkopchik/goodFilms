@@ -15,7 +15,7 @@
   <div class='search-result' *ngIf="results && results.length">
     <div id="{{result.id}}" *ngFor="let result of results" class="search-result__result-card">
       <img class="result-card__image"
-        [src]="result.poster_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + result.poster_path : result.profile_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + result.profile_path : '../../../assets/images/question.jpg'"
+        [src]="result.poster_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + result.poster_path : result.profile_path ? 'https://image.tmdb.org/t/p/w600_and_h900_bestv2' + result.profile_path : './assets/images/question.jpg'"
         alt="img">
       <h3 class="result-card__title">
         {{result.original_title ? result.original_title : result.name}}

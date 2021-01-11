@@ -87,10 +87,6 @@
     .search-result__result-card:hover{
       @extend %hover;
     }
-    // .download{
-    //   width: 100%;
-    //   height: 30vh;
-    // }
   }
   .home__slider{
     @extend %sliderBlock;
@@ -118,6 +114,9 @@
     .search-result{
       grid-gap: 1.5vw;
       .search-result__result-card{
+        .result-card__image{
+          height: auto;
+        }
         max-height: 450px;
         .result-card__title{
           font-size: 16px;

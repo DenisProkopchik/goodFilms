@@ -49,6 +49,9 @@
     grid-gap: 1.5vw;
     .on-the-air__film-card{
       max-height: 450px;
+      .film-card__image{
+        height: auto;
+      }
       .film-card__title{
         font-size: 16px;
       }
