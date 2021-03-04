@@ -1,0 +1,36 @@
+@mixin flexContainer($justify-content, $align-items, $flex-flow) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-flow: $flex-flow;
+}
+@mixin absoluteContainer($position, $top, $bottom, $right, $padding, $bRadius, $bColor, $color) {
+  position: $position;
+  top: $top;
+  bottom: $bottom;
+  right: $right;
+  padding: $padding;
+  border-radius: $bRadius;
+  background-color: $bColor;
+  color: $color;
+}
+@mixin sliderArrows($color, $opacity) {
+  border-radius: 10px;
+  border: 2px solid $color;
+  background-color: transparent;
+  color: $color;
+  text-align: center;
+  transition: all 0.2s;
+  opacity: $opacity;
+  outline: none;
+}
+@mixin routerLinkHover($backgroundSize) {
+  color: #fff;
+  background-size: $backgroundSize;
+  cursor: pointer;
+}
+@mixin routerLinkActive($backgroundSize) {
+  color: #fff;
+  background-image: linear-gradient($searchButtonColor, $searchButtonColor);
+  background-size: $backgroundSize;
+}
