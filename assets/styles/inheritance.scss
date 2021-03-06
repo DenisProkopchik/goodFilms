@@ -84,9 +84,10 @@
 %sliderBlock {
   margin: auto;
   padding-top: 20px;
-  width: 300px;
+  width: 250px;
+  font-size: 20px;
   box-sizing: border-box;
-  @include flexContainer(space-between, center, auto);
+  @include flexContainer(space-between, center, row);
 }
 %sliderPage {
   color: $defaultWhiteColor;
@@ -100,7 +101,7 @@
 }
 %buttons {
   @include absoluteContainer(absolute, 10px, auto, 10px, 10px, $bRadiusOfRound, transparent, $defaultWhiteColor);
-  @include sliderArrows($defaultWhiteColor, 1);
+  @include sliderArrows($defaultWhiteColor, 1, 10px);
   margin-top: 0px;
 }
 %loaderCircle {
