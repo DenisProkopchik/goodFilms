@@ -1,0 +1,131 @@
+@import "./variables.scss";
+@import "./mixines.scss";
+
+%routerLink {
+  color: #aaa;
+  text-decoration: none;
+  margin-bottom: 6px;
+  padding-bottom: 5px;
+  background-image: linear-gradient(#fff, #fff);
+  background-size: 0 3px, auto;
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  transition: all 0.2s ease-out;
+  outline: none;
+}
+%page {
+  position: relative;
+  width: 1340px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 100px 0px 110px 200px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 3vw;
+  justify-content: space-between;
+  background-color: transparent;
+}
+%filmCard {
+  position: relative;
+  border-radius: 10px;
+  max-height: 550px;
+  background-color: $cardBgColor;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+%imageBlock {
+  position: relative;
+  width: 100%;
+  height: 377px;
+}
+%image {
+  width: 100%;
+  height: 100%;
+}
+%title {
+  padding-left: 10px;
+}
+%vote {
+  @include absoluteContainer(
+    absolute,
+    none,
+    -($diameterOfVote / 2),
+    20px,
+    14px 8px,
+    $bRadiusOfRound,
+    $defaultVoteColor,
+    $defaultWhiteColor
+  );
+  min-width: 41.5px;
+  box-sizing: border-box;
+  font-weight: 700;
+  text-align: center;
+}
+%colorGreen {
+  background-color: $goodVoteBgColor;
+}
+%colorYellow {
+  background-color: $normalVoteBgColor;
+}
+%colorRed {
+  background-color: $badVoteBgColor;
+}
+%hover {
+  cursor: pointer;
+  .result__overview {
+    opacity: 1;
+    .overview__text {
+      top: 30px;
+    }
+  }
+}
+
+%sliderBlock {
+  margin: auto;
+  padding-top: 20px;
+  width: 250px;
+  font-size: 20px;
+  box-sizing: border-box;
+  @include flexContainer(space-between, center, row);
+}
+%sliderPage {
+  color: $defaultWhiteColor;
+  text-align: center;
+  width: 3em;
+}
+%sliderArrowsHover {
+  color: $defaultBlackColor;
+  background-color: $defaultWhiteColor;
+  cursor: pointer;
+}
+%buttons {
+  @include absoluteContainer(absolute, 10px, auto, 10px, 10px, $bRadiusOfRound, transparent, $defaultWhiteColor);
+  @include sliderArrows($defaultWhiteColor, 1, 10px);
+  margin-top: 0px;
+}
+%loaderCircle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+%noResult {
+  margin: 40px 0;
+  color: $defaultWhiteColor;
+  font-size: 26px;
+  text-align: center;
+}
+%overview {
+  padding: 10px;
+  max-height: 110px;
+  border: 1px solid $defaultWhiteColor;
+  box-sizing: border-box;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    width: $widthScrollbar;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $defaultWhiteColor;
+  }
+}
